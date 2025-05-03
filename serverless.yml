@@ -1,0 +1,23 @@
+org: circlesmiler
+app: tractive-api
+service: tractive-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-west-1
+
+functions:
+  api:
+    handler: index.handler
+    environment:
+      TRACTIVE_EMAIL: ${env:TRACTIVE_EMAIL}
+      TRACTIVE_PASSWORD: ${env:TRACTIVE_PASSWORD}
+      HOME_LATITUDE: ${env:HOME_LATITUDE}
+      HOME_LONGITUDE: ${env:HOME_LONGITUDE}
+      TRACKER_ID: ${env:TRACKER_ID}
+    events:
+      - httpApi:
+          path: /
+          method: get

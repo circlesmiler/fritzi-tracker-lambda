@@ -6,7 +6,7 @@ This Lambda function queries the Tractive API to get location information for a 
 
 - Node.js installed
 - AWS account with configured credentials
-- Serverless Framework (`npm install -g serverless`)
+- Serverless Framework (`npm install -g serverless` or `brew install serverless`)
 - Tractive account with a pet tracker device
 
 ## Environment Variables
@@ -56,7 +56,20 @@ serverless deploy \
   --param="TRACKER_ID=your-tracker-id"
 ```
 
-### Option 2: Using AWS Systems Manager Parameter Store (Recommended)
+### Option 2: Using .env file (Convenient for development)
+
+If you have a `.env` file set up, you can easily load and use these environment variables during deployment:
+
+```bash
+export $(cat .env | xargs) && serverless deploy
+```
+
+This command will:
+1. Read the `.env` file
+2. Export all variables to your shell environment
+3. Deploy using these environment variables
+
+### Option 3: Using AWS Systems Manager Parameter Store (Recommended)
 
 1. Store your variables in AWS Systems Manager Parameter Store using AWS Console or AWS CLI
 2. Update the serverless.yml to reference these parameters

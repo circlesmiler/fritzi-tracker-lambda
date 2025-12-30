@@ -6,7 +6,7 @@ This Lambda function queries the Tractive API to get location information for a 
 
 - Node.js installed
 - AWS account with configured credentials
-- Serverless Framework (`npm install -g serverless` or `brew install serverless`)
+- Serverless Framework (`npm install -g serverless`)
 - Tractive account with a pet tracker device
 
 ## Environment Variables

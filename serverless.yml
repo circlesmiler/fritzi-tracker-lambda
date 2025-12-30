@@ -1,11 +1,11 @@
 org: circlesmiler
 app: tractive-api
 service: tractive-api
-frameworkVersion: '3'
+frameworkVersion: '4'
 
 provider:
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs24.x
   region: eu-west-1
 
 functions:

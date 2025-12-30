@@ -21,3 +21,10 @@ functions:
       - httpApi:
           path: /
           method: get
+resources:
+  Resources:
+    HttpApiLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        LogGroupName: /aws/lambda/tractive-api-dev-api
+        RetentionInDays: 3
